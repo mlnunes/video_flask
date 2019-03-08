@@ -12,6 +12,9 @@
   padding: 1em;
   width: 50%;
 }
+.texto {
+ font-size: 18px;
+ font-family: Arial;
 
 /* mobile layout */
 @media (max-width: 900px) {
@@ -20,7 +23,7 @@
 </style>
 
 <head>
-  <title>Flowplayer quick start</title>
+  <title>Stream de video com Flowplayer</title>
   <link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css">
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://releases.flowplayer.org/7.2.7/flowplayer.min.js"></script>
@@ -28,6 +31,9 @@
 <body>
   {% for filme in filmes %}
   <div class="item">
+	  <div class="texto">
+		<b>Arquivo:</b> {{ filme }}<br>
+	  </div>
 	  <div class="flowplayer">
 		<video>
 		  <source type="video/mp4"
