@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+<style>
+#demo {
+  background-color: #000;
+  padding: 1.4em 1.5em 0;
+}
+
+.item {
+  box-sizing: border-box;
+  vertical-align: top;
+  margin: 0 -2px;
+  padding: 1em;
+  width: 50%;
+}
+
+/* mobile layout */
+@media (max-width: 900px) {
+  .item { width: 100% }
+}
+</style>
+
 <head>
   <title>Flowplayer quick start</title>
   <link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css">
@@ -6,10 +26,14 @@
   <script src="https://releases.flowplayer.org/7.2.7/flowplayer.min.js"></script>
 </head>
 <body>
-  <div class="flowplayer">
-    <video>
-      <source type="video/mp4"
-              src="/static/teste.mp4">
-      </video>
-  </div>
+  {% for filme in filmes %}
+  <div class="item">
+	  <div class="flowplayer">
+		<video>
+		  <source type="video/mp4"
+				  src="/static/{{ filme }}">
+		  </video>
+	  </div>
+	</div>
+	{% endfor %}
 </body>
